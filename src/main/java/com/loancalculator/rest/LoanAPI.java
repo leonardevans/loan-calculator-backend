@@ -15,7 +15,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/loan")
-@CrossOrigin(origins = "*")
 public class LoanAPI extends HttpUtil {
 
     private LoanService loanService;
@@ -24,6 +23,7 @@ public class LoanAPI extends HttpUtil {
         this.loanService = loanService;
     }
 
+    @CrossOrigin(origins = {"http://localhost:3000", "https://resilientsystems-loan-calculator.netlify.app/"})
     @PostMapping("/calculate")
     public ResponseEntity<?> calculateLoan(
             @RequestBody @Valid LoanRequestDTO loanRequestDTO,
