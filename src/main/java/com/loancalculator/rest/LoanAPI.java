@@ -23,7 +23,8 @@ public class LoanAPI extends HttpUtil {
         this.loanService = loanService;
     }
 
-    @CrossOrigin(origins = {"http://localhost:3000", "https://resilientsystems-loan-calculator.netlify.app/"})
+    @CrossOrigin(origins = {"https://resilientsystems-loan-calculator.netlify.app/"})
+    // @CrossOrigin(origins = {"http://localhost:3000", "https://resilientsystems-loan-calculator.netlify.app/"})
     @PostMapping("/calculate")
     public ResponseEntity<?> calculateLoan(
             @RequestBody @Valid LoanRequestDTO loanRequestDTO,
